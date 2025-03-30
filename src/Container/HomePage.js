@@ -7,7 +7,7 @@ export const Homepage = () =>{
   
     const fetchData = async () => {
         const response = await axios.get(
-          "https://thingproxy.freeboard.io/fetch/https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF"
+          "https://cors-anywhere.herokuapp.com/https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF"
         );
         setData(response.data);
     };

@@ -1,4 +1,5 @@
 import { Homepage } from './Container/HomePage';
+import './App.css'
 
 function App() {
   return (

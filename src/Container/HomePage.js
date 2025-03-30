@@ -4,10 +4,12 @@ import axios from "axios";
 
 export const Homepage = () =>{
     const [data, setData] = useState(null);
+
+   const url = "EC4M7RF"
   
     const fetchData = async () => {
         const response = await axios.get(
-          "https://cors-anywhere.herokuapp.com/https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF"
+        `https://cors-anywhere.herokuapp.com/https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${url}`
         );
         setData(response.data);
     };
@@ -19,7 +21,7 @@ export const Homepage = () =>{
   
     return (
       <div className="App">
-        <h1>Restaurants Near EC4M7RF</h1>
+        <h1 className="title">Restaurants Near {url} </h1>
        <Restaurantlist data = {data}/>
       </div>
     );

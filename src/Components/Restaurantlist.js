@@ -3,16 +3,16 @@ import { Restaurant } from "./Restaurant";
 
 export const Restaurantlist = ({data}) =>{
     if (!data) {
-        return <p>Loading...</p>;
+        return <div className="spinner"></div>;
       }
     
       const restaurantData = data.restaurants.slice(0, 10); 
 
     
       return (
-        <div>
+        <div className='Restaurant-list'>
           {restaurantData.map((restaurant) => (
-            <Restaurant key={restaurant.id} restaurant={restaurant} />
+            <Restaurant key={restaurant.id} restaurant={restaurant}/>
           ))}
         </div>
       );

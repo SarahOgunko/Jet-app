@@ -16,6 +16,7 @@ First, clone the repository to your local machine:
 ### `git clone git@github.com:your-username/Jet-app.git`
 
 2. Install Dependencies
+Navigate into the project directory and install the required dependencies:
 
 cd jet-app
 ### `npm install`
@@ -37,6 +38,17 @@ Run the following command to start the development server:
 
 
 ## Assumptions
+- I assumed that the structure of the API response would remain consistent, specifically that the data.restaurants array would always be present, and that the fields name, cuisines, rating, and address would exist for each restaurant.
+
+- I assumed that the requirement to display only 10 restaurants meant limiting the display to the first 10 results provided by the API, regardless of any specific ordering or filtering criteria.
+
+- Since the API has CORS restrictions when accessed from the browser, I used a CORS proxy (cors-anywhere) to bypass these restrictions. I assumed this was acceptable for the assessment, but for a production environment, a more secure and permanent solution would be required.
 
 
 ## Improvments 
+
+- Currently, error handling is minimal. More robust error handling could be added to provide detailed error messages depending on the type of failure (e.g., network error, invalid response, etc.).
+
+- Adding unit using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
+
+- The current UI could be improved with better CSS styling, a responsive layout for different devices, and a more intuitive user experience. Adding a loading spinner or skeleton loader while data is being fetched would enhance the interface

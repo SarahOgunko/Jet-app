@@ -7,6 +7,7 @@ export const Restaurantlist = ({data}) =>{
       }
     
       const restaurantData = data.restaurants.slice(0, 10); 
+
     
       return (
         <div>

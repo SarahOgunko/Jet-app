@@ -1,7 +1,7 @@
 import React from "react";
 import { Restaurant } from "./Restaurant";
 
-export const Restaurantlist = ({ data }) => {
+export const RestaurantList = ({ data }) => {
   return !data ? (
     <div className="spinner-container">
       <div className="spinner"></div>

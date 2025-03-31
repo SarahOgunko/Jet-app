@@ -1,8 +1,8 @@
-import { Restaurantlist } from "../Components/Restaurantlist";
+import { RestaurantList } from "../Components/RestaurantList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const Homepage = () => {
+export const HomePage = () => {
   const [data, setData] = useState(null);
 
   const url = "BS42NN";
@@ -16,13 +16,12 @@ export const Homepage = () => {
 
   useEffect(() => {
     fetchData();
-    console.log(data);
   }, []);
 
   return (
     <div>
       <h1 className="title">Restaurants Near {url}</h1>
-      <Restaurantlist data={data} />
+      <RestaurantList data={data} />
     </div>
   );
 };

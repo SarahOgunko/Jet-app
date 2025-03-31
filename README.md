@@ -68,7 +68,7 @@ npm start
 
 - Adding unit using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
 
-- The UI is functional but can be improved for a more intuitive and engaging experience.
+- The UI is functional but can be improved for a more engaging experience.
 
 - Currently, the application uses a hardcoded postcode, which means users cannot change the postcode without modifying the code. To improve this, a dynamic postcode search feature should be added, allowing users to enter a postcode and fetch updated restaurant listings. Input validation should also be implemented to ensure that only valid postcodes trigger API requests
 

@@ -4,13 +4,21 @@ This project fetches and displays restaurant data from the Just Eat API based on
 
 ## Setup Instructions
 
-Make sure you have the following installed on your machine:
+1. Make sure you have the following installed on your machine:
 
 Node.js 
 
 npm 
 
-1. Clone the Repository
+- this can be checked by running the following commands 
+
+```bash
+node -v
+npm -v
+```
+If Node.js and npm are not installed, include a link to download Node.js which also installs npm.
+
+2. Clone the Repository
 
 First, clone the repository to your local machine:
 
@@ -18,7 +26,7 @@ First, clone the repository to your local machine:
 git clone git@github.com:your-username/Jet-app.git
 ```
 
-2. Install Dependencies
+3. Install Dependencies
 
 Navigate into the project directory and install the required dependencies:
 
@@ -26,7 +34,7 @@ Navigate into the project directory and install the required dependencies:
 npm install
 ```
 
-3. CORS Setup
+4. CORS Setup
 
 To avoid CORS (Cross-Origin Resource Sharing) issues when making requests to the Just Eat API, you need to set up a CORS proxy.
 
@@ -37,7 +45,7 @@ You will need to request temporary access to the CORS proxy by visiting the foll
 
 After requesting access, the proxy will allow your app to make the necessary API calls.
 
-4. Start the Application
+5. Start the Application
 
 Run the following command to start the development server:
 
@@ -56,8 +64,12 @@ npm start
 
 ## Improvments 
 
-- Currently, error handling is minimal. More robust error handling could be added to provide detailed error messages depending on the type of failure (e.g., network error, invalid response, etc.).
+- Minimal error handling is present. If the API call fails, the app either displays a spinner indefinitely or crashes without giving the user meaningful feedback.Am improvemnet would be to display user-friendly error messages based on the type of failure
 
 - Adding unit using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
 
-- The current UI could be improved with better CSS styling, a responsive layout for different devices, and a more intuitive user experience. Adding a loading spinner or skeleton loader while data is being fetched would enhance the interface
+- The UI is functional but can be improved for a more intuitive and engaging experience.
+
+- Currently, the application uses a hardcoded postcode, which means users cannot change the postcode without modifying the code. To improve this, a dynamic postcode search feature should be added, allowing users to enter a postcode and fetch updated restaurant listings. Input validation should also be implemented to ensure that only valid postcodes trigger API requests
+
+

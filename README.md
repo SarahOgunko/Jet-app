@@ -16,7 +16,7 @@ npm
 node -v
 npm -v
 ```
-If Node.js and npm are not installed, include a link to download Node.js which also installs npm.
+If Node.js and npm are not installed downlaod here, (https://nodejs.org/en).
 
 2. Clone the Repository
 
@@ -64,7 +64,7 @@ npm start
 
 ## Improvments 
 
-- Minimal error handling is present. If the API call fails, the app either displays a spinner indefinitely or crashes without giving the user meaningful feedback.Am improvemnet would be to display user-friendly error messages based on the type of failure
+- Minimal error handling is present. If the API call fails, the app either displays a spinner indefinitely or crashes without giving the user meaningful feedback.An improvemnet would be to display user-friendly error messages based on the type of failure
 
 - Adding unit using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
 

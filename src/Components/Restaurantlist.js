@@ -2,17 +2,17 @@ import React from "react";
 import { Restaurant } from "./Restaurant";
 
 export const RestaurantList = ({ data }) => {
-  return !data ? (
-    <div className="spinner-container">
-      <div className="spinner"></div>
-    </div>
-  ) : (
+  return (
     <div className="Restaurant-list">
-      {data.restaurants.slice(0, 10).map((restaurant) => (
-        <Restaurant key={restaurant.id} restaurant={restaurant} />
-      ))}
+      {!data ? (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      ) : (
+        data.restaurants.slice(0, 10).map((restaurant) => (
+          <Restaurant key={restaurant.id} restaurant={restaurant} />
+        ))
+      )}
     </div>
   );
 };
-
-

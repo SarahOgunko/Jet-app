@@ -16,7 +16,7 @@ npm
 node -v
 npm -v
 ```
-If Node.js and npm are not installed, include a link to download Node.js which also installs npm.
+If Node.js and npm are not installed downlaod here, (https://nodejs.org/en).
 
 2. Clone the Repository
 
@@ -34,20 +34,17 @@ Navigate into the project directory and install the required dependencies:
 npm install
 ```
 
-4. CORS Setup
+4. Start the Proxy Sever 
 
-To avoid CORS (Cross-Origin Resource Sharing) issues when making requests to the Just Eat API, you need to set up a CORS proxy.
+Before starting the application, ensure you have the proxy server running. In a separate terminal window, navigate to the project directory and run the following command:
 
- Use a Public CORS Proxy (CORS Anywhere)
-To get started quickly, you can use a public CORS proxy such as CORS Anywhere. This allows you to bypass CORS restrictions without setting up your own proxy server.
-
-You will need to request temporary access to the CORS proxy by visiting the following URL before making any requests: https://cors-anywhere.herokuapp.com/corsdemo
-
-After requesting access, the proxy will allow your app to make the necessary API calls.
+```bash
+node server.js
+```
 
 5. Start the Application
 
-Run the following command to start the development server:
+Once the proxy server is running, you can start the development server with the following command:
 
 ```bash
 npm start
@@ -59,17 +56,13 @@ npm start
 
 - I assumed that the requirement to display only 10 restaurants meant limiting the display to the first 10 results provided by the API, regardless of any specific ordering or filtering criteria.
 
-- Since the API has CORS restrictions when accessed from the browser, I used a CORS proxy (cors-anywhere) to bypass these restrictions. I assumed this was acceptable for the assessment, but for a production environment, a more secure and permanent solution would be required.
+- The app previously relied on a CORS proxy (cors-anywhere) to bypass CORS restrictions when making API requests. However, this is no longer necessary as I have implemnet a proxy server (server.js) to handle requests and avoid CORS issues.
 
 
 ## Improvments 
 
-- Minimal error handling is present. If the API call fails, the app either displays a spinner indefinitely or crashes without giving the user meaningful feedback.Am improvemnet would be to display user-friendly error messages based on the type of failure
+-  Currently, the application does not validate the user-provided postcode before making the API request. An improvement would be to add postcode validation to ensure that only valid postcodes trigger API requests. This would prevent unnecessary requests to the API with incorrect or incomplete postcodes, enhancing the user experience and preventing potential errors.
 
-- Adding unit using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
+- Adding unit testing using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
 
 - The UI is functional but can be improved for a more engaging experience.
-
-- Currently, the application uses a hardcoded postcode, which means users cannot change the postcode without modifying the code. To improve this, a dynamic postcode search feature should be added, allowing users to enter a postcode and fetch updated restaurant listings. Input validation should also be implemented to ensure that only valid postcodes trigger API requests
-
-

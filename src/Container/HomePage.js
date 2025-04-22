@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { RestaurantList } from "../Components/RestaurantList";
+import { RestaurantList } from "../Components/RestaurantList"
 import { RestaurantForm } from "../Components/RestaurantForm";
 
 export const HomePage = () => {
   const [data, setData] = useState(null);
   const [postcode, setPostcode] = useState("BS12NN");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetchData(postcode);
@@ -14,7 +14,7 @@ export const HomePage = () => {
 
   const fetchData = async (postcode) => {
     try {
-      setError(null);
+      setError(false);
       const response = await axios.get(
         `http://localhost:4000/${postcode}`
 
@@ -22,7 +22,7 @@ export const HomePage = () => {
       setData(response.data);
     } catch (error) {
       console.error("Error fetching restaurants:", error);
-      setError("Oops! An error occurred while fetching your data.");
+      setError(true);
     }
   };
 
@@ -34,7 +34,7 @@ export const HomePage = () => {
     <div>
       <h1 className="title">Restaurants Near {postcode}</h1>
       <RestaurantForm onSubmit={handlePostcodeSubmit} />
-      {error && <div className="error-text">{error}</div>}
+      {error && <p className="error-text">Oops! An error occurred while fetching your data.</p>}
       <RestaurantList data={data} />
     </div>
   );

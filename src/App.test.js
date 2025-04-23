@@ -1,14 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import axios from "axios";
+import AxiosMockAdapter from "axios-mock-adapter";
 
-describe("HomePage", ()=>{
-it("",()=>{
+describe("", () => {
+  it("", async () => {
 
-})
-})
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  });
 });
+

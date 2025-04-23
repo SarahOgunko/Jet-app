@@ -2,6 +2,11 @@
   "name": "jet-app",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios)/)"
+    ]
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -38,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^2.1.0"
   }
 }

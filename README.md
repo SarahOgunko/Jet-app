@@ -63,6 +63,6 @@ npm start
 
 -  Currently, the application does not validate the user-provided postcode before making the API request. An improvement would be to add postcode validation to ensure that only valid postcodes trigger API requests. This would prevent unnecessary requests to the API with incorrect or incomplete postcodes, enhancing the user experience and preventing potential errors.
 
-- Adding unit testing using libraries like Jest and React Testing Library would help ensure that the application is working correctly and prevent future regressions.
+- Instead of simply slicing the first 10 results, apply filtering based on API fields—such as star rating, delivery cost, open-now status or cuisine type—to surface more relevant listings.
 
 - The UI is functional but can be improved for a more engaging experience.
